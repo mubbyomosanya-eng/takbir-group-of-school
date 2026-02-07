@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Takbir Model School</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/images/logo.jpg">
+    <style>
+        .contact-hero {
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.9) 0%, rgba(101, 67, 33, 0.8) 100%);
+            color: var(--cream-primary);
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .contact-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--cream-primary);
+        }
+        
+        .contact-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        .contact-section {
+            padding: 80px 0;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 40px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .contact-card {
+            background: var(--cream-very-light);
+            padding: 30px;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow);
+            border-left: 5px solid var(--brown-primary);
+        }
+        
+        .contact-card-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--brown-primary), var(--gold-primary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--cream-primary);
+            font-size: 1.5rem;
+        }
+        
+        .contact-card h3 {
+            font-size: 1.5rem;
+            color: var(--brown-primary);
+            margin: 0;
+        }
+        
+        .contact-details p {
+            color: var(--text-medium);
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        
+        .contact-form {
+            background: var(--cream-very-light);
+            padding: 40px;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--brown-primary);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--cream-dark);
+            border-radius: var(--border-radius);
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+            background: var(--cream-light);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--brown-primary);
+            box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.1);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .map-section {
+            padding: 0 0 80px;
+        }
+        
+        .map-container {
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            height: 400px;
+        }
+        
+        .map-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--cream-dark), var(--cream-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: var(--brown-primary);
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .map-placeholder i {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .map-placeholder h3 {
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 992px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .contact-hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .contact-form {
+                padding: 30px 20px;
+            }
+            
+            .contact-card {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Top -->
+    <div class="header-top">
+        <div class="container">
+            <div class="contact-info-top">
+                <span><i class="fas fa-phone"></i> +234 803 065 8893</span>
+                <span><i class="fas fa-phone"></i> +234 803 373 8974</span>
+                <span><i class="fas fa-envelope"></i>Miklaw01@gmail.com</span>
+            </div>
+            <div class="social-top">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="logo">
+              <img src="assets/images/logo.jpg" alt="Takbir Model College" style="width: 60px;">
+                <div class="logo-text">
+                    <h1>TAKBIR MODEL SCHOOL</h1>
+                    <p>"Simply The Best" - Igbeba, Ijebu-Ode</p>
+                </div>
+            </div>
+            
+            <nav class="nav-links">
+                <a href="home.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="why-choose.html">Why Choose Us</a>
+                <a href="contact.html" class="active">Contact</a>
+            </nav>
+            
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contact Hero -->
+    <section class="contact-hero">
+        <div class="container">
+            <h1>Contact Takbir Model School</h1>
+            <p>We'd love to hear from you. Reach out to us for inquiries, school tours, or enrollment information.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-container">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-card-header">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h3>Our Location</h3>
+                        </div>
+                        <div class="contact-details">
+                            <p><strong>Address:</strong> Igbeba, Ijebu-Ode, Ogun State, Nigeria</p>
+                            <p><strong>Campus Hours:</strong> Monday - Friday, 7:30 AM - 5:00 PM</p>
+                            <p><strong>Weekend:</strong> Closed (except for special events)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-card-header">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <h3>Phone & Email</h3>
+                        </div>
+                        <div class="contact-details">
+                            <p><strong>Phone:</strong> +234 803 373 8974</p>
+                            <p><strong>Alternative:</strong> +234 803 065 8893</p>
+                            <p><strong>Email:</strong> monsurat001@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-card-header">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <h3>Office Hours</h3>
+                        </div>
+                        <div class="contact-details">
+                            <p><strong>Administration:</strong> 8:00 AM - 4:00 PM (Mon-Fri)</p>
+                            <p><strong>Admissions Office:</strong> 9:00 AM - 3:00 PM (Mon-Fri)</p>
+                            <p><strong>School Tours:</strong> By appointment only</p>
+                            <p><strong>Emergency:</strong> 24/7 available on main phone line</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+<div class="contact-form">
+    <h2 style="color: var(--brown-primary); margin-bottom: 30px;">Send Us a Message</h2>
+    
+    <!-- Simple Email Link Form -->
+    <div class="form-group">
+        <label for="name">Your Name *</label>
+        <input type="text" id="name" class="form-control" placeholder="Your full name">
+    </div>
+    
+    <div class="form-group">
+        <label for="email">Your Email *</label>
+        <input type="email" id="email" class="form-control" placeholder="your.email@example.com">
+    </div>
+    
+    <div class="form-group">
+        <label for="message">Your Message *</label>
+        <textarea id="message" class="form-control" rows="6" placeholder="Please type your message here..."></textarea>
+    </div>
+    
+    <!-- This button opens email app -->
+    <a href="#" id="sendEmailBtn" class="btn-primary submit-btn">
+        <i class="fas fa-paper-plane"></i> Send Message via Email
+    </a>
+    
+    <p style="margin-top: 20px; color: var(--text-light); font-size: 0.9rem;">
+        <i class="fas fa-info-circle"></i> This will open your email app to send us a message.
+    </p>
+    <!-- WhatsApp Button -->
+<a href="https://wa.me/2348033738974?text=Hello%20Takbir%20Model%20College%2C%20I%20have%20a%20question" 
+   target="_blank" 
+   class="btn-accent submit-btn" 
+   style="margin-top: 10px;">
+    <i class="fab fa-whatsapp"></i> Message us on WhatsApp
+</a>
+</div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+   <!-- Map Section -->
+<section class="map-section">
+    <div class="container">
+        <h2 class="section-title">Find Our Location</h2>
+        <div class="map-container">
+            <!-- Google Maps Embed -->
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!4v1768684344605!6m8!1m7!1swlkwdUrG5Lwfchua7Q-90A!2m2!1d6.835256127487674!2d3.937886181326064!3f150.71818018183887!4f-17.165045692602433!5f0.7820865974627469" 
+                width="100%" 
+                height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>TAKBIR GROUP SCHOOL</h3>
+                    <p style="margin-bottom: 20px; color: rgba(255, 250, 240, 0.9);">
+                        Where Education Meets Excellence and Islamic Values
+                    </p>
+                    <div class="social-footer">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                        <li><a href="why-choose.html"><i class="fas fa-star"></i> Why Choose Us</a></li>
+                        <li><a href="contact.html"><i class="fas fa-address-book"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info-footer">
+                        <p><i class="fas fa-map-marker-alt"></i> Igbeba, Ijebu-Ode, Ogun State, Nigeria</p>
+                        <p><i class="fas fa-phone"></i> +234 803 373 8974</p>
+                        <p><i class="fas fa-envelope"></i> Miklaw01@gmail.com</p>
+                        <p><i class="fas fa-clock"></i> Mon - Fri: 8:00 AM - 5:00 PM</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; <span id="currentYear"></span> Takbir Model College. All Rights Reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            // Show loading state
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+            
+            // Simulate API call (in real implementation, send to server)
+            setTimeout(() => {
+                alert('Thank you for your message! We will contact you within 24-48 hours.');
+                this.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }, 1500);
+        });
+    </script>
+    <script>
+document.getElementById('sendEmailBtn').addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    
+    if (!name || !email || !message) {
+        alert('Please fill in all fields before sending.');
+        return;
+    }
+    
+    // School's email address
+    const schoolEmail = 'Miklaw01@gmail.com';
+    const subject = `Message from ${name} - Takbir Model College Website`;
+    const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0AMessage:%0D%0A${message}`;
+    
+    // Open email client
+    window.location.href = `mailto:${schoolEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
+    // Clear form
+    document.getElementById('name').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('message').value = '';
+});
+</script>
+</body>
+</html>

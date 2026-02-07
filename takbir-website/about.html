@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Takbir Group School</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/images/logo.jpg">
+    <style>
+        .about-hero {
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.9) 0%, rgba(101, 67, 33, 0.8) 100%),
+                        url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            color: var(--cream-primary);
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .about-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--cream-primary);
+        }
+        
+        .about-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        .about-content {
+            padding: 80px 0;
+        }
+        
+        .about-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+        
+        .about-section:nth-child(even) .about-text {
+            order: 2;
+        }
+        
+        .about-section:nth-child(even) .about-image {
+            order: 1;
+        }
+        
+        .about-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--brown-primary);
+        }
+        
+        .about-text p {
+            margin-bottom: 15px;
+            color: var(--text-medium);
+            line-height: 1.7;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .mission-vision {
+            background-color: var(--cream-light);
+            padding: 80px 0;
+        }
+        
+        .mv-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .mv-card {
+            background: var(--cream-very-light);
+            padding: 40px 30px;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow);
+            text-align: center;
+            border-top: 5px solid var(--brown-primary);
+        }
+        
+        .mv-card i {
+            font-size: 3rem;
+            color: var(--brown-primary);
+            margin-bottom: 20px;
+        }
+        
+        .mv-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--brown-primary);
+        }
+        
+        @media (max-width: 768px) {
+            .about-section {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .about-hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Top -->
+    <div class="header-top">
+        <div class="container">
+            <div class="contact-info-top">
+                <span><i class="fas fa-phone"></i> +234 803 065 8893</span>
+                <span><i class="fas fa-phone"></i> +234 803 373 8974</span>
+                <span><i class="fas fa-envelope"></i> Miklaw01@gmail.com</span>
+            </div>
+            <div class="social-top">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="logo">
+               <img src="assets/images/logo.jpg" alt="Takbir Model College" style="width: 60px;">
+                <div class="logo-text">
+                    <h1>TAKBIR GROUP SCHOOL</h1>
+                    <p>"Simply The Best" - Igbeba, Ijebu-Ode</p>
+                </div>
+            </div>
+            
+            <nav class="nav-links">
+                <a href="home.html">Home</a>
+                <a href="about.html" class="active">About Us</a>
+                <a href="why-choose.html">Why Choose Us</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Hero -->
+    <section class="about-hero">
+        <div class="container">
+            <h1>About Takbir Group School</h1>
+            <p>Established with a vision to provide quality Islamic education combined with academic excellence</p>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="about-content">
+        <div class="container">
+            <div class="about-section">
+                <div class="about-text">
+                    <h2>Our History</h2>
+                    <p>Takbir group School was founded in 1998 in Igbeba, Ijebu-Ode, Ogun State, with a mission to provide quality education rooted in Islamic values. What began as a small Islamic school has grown into a renowned institution known for academic excellence and moral upbringing.</p>
+                    <p>Our founder, Mr(alhaji) Lawal Adebola Mikail, envisioned a school where children could receive both Western education and Islamic knowledge, preparing them for success in this life and the hereafter.</p>
+                    <p>Also we started our secondary school in the year 2014 we advance from Primary to Secondary so as to improve the quality of education beyond the primary level but to Secondary level so that higher education with islamic learning  can be given to our student</p>
+                    <p>Over the years, we have expanded our facilities, curriculum, and teaching methods while maintaining our core Islamic principles and commitment to excellence.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1524178234883-043d5c3f3cf4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="School History">
+                </div>
+            </div>
+            
+            <div class="about-section">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&auto=format&fit=crop&w-800&q=80" alt="Islamic Education">
+                </div>
+                <div class="about-text">
+                    <h2>Our Islamic Foundation</h2>
+                    <p>At Takbir Group School, Islam is not just a subject—it's a way of life. We integrate Islamic values into every aspect of our educational program.</p>
+                    <p>Students engage in daily Quran recitation, learn Arabic language, study Islamic history, and practice the teachings of Prophet Muhammad (SAW) in their daily lives.</p>
+                    <p>Our Islamic studies program includes Quran memorization (Hifz), Tajweed, Fiqh, Hadith, and Seerah, taught by qualified Islamic scholars and teachers.</p>
+                    <p>We observe the five daily prayers, Friday congregational prayers, and celebrate Islamic festivals while respecting Nigerian national holidays.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="mission-vision">
+        <div class="container">
+            <h2 class="section-title">Our Mission & Vision</h2>
+            <div class="mv-grid">
+                <div class="mv-card">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Our Mission</h3>
+                    <p>To provide quality education that combines academic excellence with strong Islamic moral values, producing well-rounded individuals who are successful in this world and prepared for the hereafter.</p>
+                </div>
+                
+                <div class="mv-card">
+                    <i class="fas fa-eye"></i>
+                    <h3>Our Vision</h3>
+                    <p>To be the leading Islamic educational institution in South-West Nigeria, recognized for academic excellence, Islamic character development, and producing future leaders who contribute positively to society.</p>
+                </div>
+                
+                <div class="mv-card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Our Values</h3>
+                    <p>• Taqwa (God-consciousness)<br>• Excellence in Education<br>• Integrity & Honesty<br>• Discipline & Respect<br>• Community Service<br>• Innovation & Creativity</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>TAKBIR GROUP SCHOOL</h3>
+                    <p style="margin-bottom: 20px; color: rgba(255, 250, 240, 0.9);">
+                        An Islamic and religious school dedicated to achieving greatness through quality education combined with strong moral values.
+                    </p>
+                    <div class="social-footer">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                        <li><a href="why-choose.html"><i class="fas fa-star"></i> Why Choose Us</a></li>
+                        <li><a href="contact.html"><i class="fas fa-address-book"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info-footer">
+                        <p><i class="fas fa-map-marker-alt"></i> Igbeba, Ijebu-Ode, Ogun State, Nigeria</p>
+                        <p><i class="fas fa-phone"></i> +234 803 373 8974</p>
+                        <p><i class="fas fa-envelope"></i> Miklaw01@gmail.com</p>
+                        <p><i class="fas fa-clock"></i> Mon - Fri: 8:00 AM - 5:00 PM</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; <span id="currentYear"></span> Takbir Model School. All Rights Reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

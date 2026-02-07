@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Takbir Group Of School | Igbeba, Ijebu-Ode</title>
+    <link rel="stylesheet" href="assets/css/welcome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/images/logo.jpg">
+    <style>
+        /* Add button styles */
+        .enter-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: linear-gradient(135deg, var(--gold-accent) 0%, var(--gold-light) 100%);
+            color: var(--brown-dark);
+            padding: 18px 45px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(218, 165, 32, 0.4);
+            margin-top: 30px;
+        }
+
+        .enter-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(218, 165, 32, 0.6);
+            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-accent) 100%);
+        }
+
+        .enter-btn i {
+            font-size: 1.4rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome-container">
+        <!-- Slideshow Container -->
+        <div class="slideshow-container">
+            <!-- Slide 1 -->
+            <div class="slide active">
+                <div class="slide-image" style="background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');"></div>
+                <div class="slide-overlay">
+                    <div class="slide-content">
+                        <div class="arabic-text">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+                        <h1 class="school-name">TAKBIR GROUP OF SCHOOL</h1>
+                        <p class="tagline">"Simply The Best"</p>
+                        <p class="description">Where Education Meets Excellence & Islamic Values</p>
+                        
+                        <!-- ENTER BUTTON - FIXED -->
+                        <a href="home.html" class="enter-btn">
+                            <i class="fas fa-door-open"></i>
+                            Enter Our Website
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="slide">
+                <div class="slide-image" style="background-image: url('https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');"></div>
+                <div class="slide-overlay">
+                    <div class="slide-content">
+                        <div class="arabic-text">يَرْفَعِ اللَّهُ الَّذِينَ آمَنُوا مِنكُمْ وَالَّذِينَ أُوتُوا الْعِلْمَ دَرَجَاتٍ</div>
+                        <h2 class="slide-title">Islamic Environment</h2>
+                        <p class="slide-description">Nurturing young minds with Quranic values and modern education</p>
+                        
+                        <!-- ENTER BUTTON -->
+                        <a href="home.html" class="enter-btn">
+                            <i class="fas fa-door-open"></i>
+                            Enter Our Website
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="slide">
+                <div class="slide-image" style="background-image: url('https://images.unsplash.com/photo-1524178234883-043d5c3f3cf4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');"></div>
+                <div class="slide-overlay">
+                    <div class="slide-content">
+                        <div class="arabic-text">اطْلُبُوا الْعِلْمَ مِنَ الْمَهْدِ إِلَى اللَّحْدِ</div>
+                        <h2 class="slide-title">Academic Excellence</h2>
+                        <p class="slide-description">Quality education from kindergarten to secondary level</p>
+                        
+                        <!-- ENTER BUTTON -->
+                        <a href="home.html" class="enter-btn">
+                            <i class="fas fa-door-open"></i>
+                            Enter Our Website
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Navigation Dots -->
+            <div class="slideshow-nav">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple slideshow JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.dot');
+            let currentSlide = 0;
+            
+            function showSlide(index) {
+                slides.forEach(slide => slide.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
+                
+                slides[index].classList.add('active');
+                dots[index].classList.add('active');
+                currentSlide = index;
+            }
+            
+            function nextSlide() {
+                let nextIndex = (currentSlide + 1) % slides.length;
+                showSlide(nextIndex);
+            }
+            
+            // Add click events to dots
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', function() {
+                    showSlide(index);
+                });
+            });
+            
+            // Auto-advance slides
+            setInterval(nextSlide, 5000);
+            
+            // Initialize
+            showSlide(0);
+        });
+    </script>
+</body>
+</html>
