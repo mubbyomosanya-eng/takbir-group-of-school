@@ -8,6 +8,190 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="assets/images/logo.jpg">
+    <style>
+        /* Hero Slideshow Styles */
+        .hero-slideshow {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            overflow: hidden;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .hero-slide.active {
+            opacity: 1;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, 
+                rgba(101, 67, 33, 0.85) 0%, 
+                rgba(139, 69, 19, 0.8) 50%, 
+                rgba(160, 82, 45, 0.75) 100%);
+            display: flex;
+            align-items: center;
+            padding: 0 50px;
+        }
+        
+        .hero-slide-content {
+            max-width: 600px;
+            color: var(--cream-primary);
+        }
+        
+        .hero-slide-content h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--cream-primary);
+        }
+        
+        .hero-slide-content h2 span {
+            color: var(--gold-primary);
+        }
+        
+        .hero-slide-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .hero-slide-content span {
+            display: block;
+            font-weight: 600;
+            color: var(--gold-light);
+            margin-top: 10px;
+        }
+        
+        .slideshow-controls {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+        
+        .slide-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .slide-dot.active {
+            background: var(--gold-primary);
+            transform: scale(1.2);
+        }
+        
+        .slideshow-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            transform: translateY(-50%);
+            z-index: 10;
+        }
+        
+        .slide-nav-btn {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--cream-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+            backdrop-filter: blur(5px);
+        }
+        
+        .slide-nav-btn:hover {
+            background: var(--gold-primary);
+            color: var(--brown-dark);
+        }
+        
+        /* Adjust hero section */
+        .hero {
+            padding: 50px 0;
+            background: none;
+        }
+        
+        .hero-content {
+            flex-direction: column;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .hero-slideshow {
+                height: 500px;
+            }
+            
+            .hero-slide-content h2 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-overlay {
+                padding: 0 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-slideshow {
+                height: 400px;
+            }
+            
+            .hero-slide-content h2 {
+                font-size: 2rem;
+            }
+            
+            .hero-slide-content p {
+                font-size: 1rem;
+            }
+            
+            .slide-nav-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-slideshow {
+                height: 350px;
+            }
+            
+            .hero-slide-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-overlay {
+                padding: 0 20px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header Top -->
@@ -30,7 +214,7 @@
     <header class="main-header">
         <div class="container header-content">
             <div class="logo">
-    <img src="assets/images/logo.jpg" alt="Takbir Model College" style="width: 60px;">
+                <img src="assets/images/logo.jpg" alt="Takbir Group Of School" style="width: 60px;">
                 <div class="logo-text">
                     <h1>TAKBIR GROUP OF SCHOOL</h1>
                     <p>"Simply The Best" - Igbeba, Ijebu-Ode</p>
@@ -50,31 +234,103 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Slideshow -->
     <section class="hero">
         <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h2>Welcome to <span>Takbir Group Of School</span></h2>
-                    <p>An Islamic and religious school dedicated to achieving greatness through quality education combined with strong moral values and Islamic principles.
-                    <span>
-                        With both primary and secondary education
-                    </span>
-                    </p>
-                    <div class="hero-btns">
-                        <a href="about.html" class="btn-accent">Learn About Us</a>
-                        <a href="why-choose.html" class="btn-secondary">Why Choose Us</a>
-                    </div>
-                    <div class="hero-badges">
-                        <span class="badge">Islamic Environment</span>
-                        <span class="badge">Academic Excellence</span>
-                        <span class="badge">Qualified Teachers</span>
-                        <span class="badge">Modern Facilities</span>
+            <div class="hero-slideshow">
+                <!-- Slide 1 - School Building -->
+                <div class="hero-slide active">
+                    <div class="slide-image" style="background-image: url('assets/images/building.jpg');"></div>
+                    <div class="hero-overlay">
+                        <div class="hero-slide-content">
+                            <h2>Welcome to <span>Takbir Group Of School</span></h2>
+                            <p>An Islamic and religious school dedicated to achieving greatness through quality education combined with strong moral values and Islamic principles.
+                            <span>With both primary and secondary education</span>
+                            </p>
+                            <div class="hero-btns">
+                                <a href="about.html" class="btn-accent">Learn About Us</a>
+                                <a href="why-choose.html" class="btn-secondary">Why Choose Us</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="hero-image">
-                    <img src="assets/images/building.jpg" alt="Takbir Model College Building">
+                
+                <!-- Slide 2 - Students Learning -->
+                <div class="hero-slide">
+                    <div class="slide-image" style="background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');"></div>
+                    <div class="hero-overlay">
+                        <div class="hero-slide-content">
+                            <h2>Academic <span>Excellence</span></h2>
+                            <p>Providing quality education that prepares students for success in both academic and Islamic knowledge.
+                            <span>WAEC & NECO preparation with Islamic values</span>
+                            </p>
+                            <div class="hero-btns">
+                                <a href="about.html" class="btn-accent">Our Curriculum</a>
+                                <a href="why-choose.html" class="btn-secondary">Academic Results</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                
+                <!-- Slide 3 - Islamic Education -->
+                <div class="hero-slide">
+                    <div class="slide-image" style="background-image: url('https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');"></div>
+                    <div class="hero-overlay">
+                        <div class="hero-slide-content">
+                            <h2>Islamic <span>Environment</span></h2>
+                            <p>Nurturing young Muslims with Quranic knowledge, Arabic language, and Islamic moral teachings.
+                            <span>Daily Quran classes and Islamic studies</span>
+                            </p>
+                            <div class="hero-btns">
+                                <a href="about.html" class="btn-accent">Islamic Program</a>
+                                <a href="why-choose.html" class="btn-secondary">Character Building</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 4 - Student Activities -->
+                <div class="hero-slide">
+                    <div class="slide-image" style="background-image: url('https://images.unsplash.com/photo-1524178234883-043d5c3f3cf4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');"></div>
+                    <div class="hero-overlay">
+                        <div class="hero-slide-content">
+                            <h2>Holistic <span>Development</span></h2>
+                            <p>Sports, literary activities, science clubs, and vocational training for well-rounded education.
+                            <span>Preparing students for life beyond academics</span>
+                            </p>
+                            <div class="hero-btns">
+                                <a href="about.html" class="btn-accent">Our Activities</a>
+                                <a href="why-choose.html" class="btn-secondary">Student Life</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Navigation Controls -->
+                <div class="slideshow-nav">
+                    <div class="slide-nav-btn prev-slide">
+                        <i class="fas fa-chevron-left"></i>
+                    </div>
+                    <div class="slide-nav-btn next-slide">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+                
+                <!-- Slide Dots -->
+                <div class="slideshow-controls">
+                    <div class="slide-dot active" data-slide="0"></div>
+                    <div class="slide-dot" data-slide="1"></div>
+                    <div class="slide-dot" data-slide="2"></div>
+                    <div class="slide-dot" data-slide="3"></div>
+                </div>
+            </div>
+            
+            <!-- Badges moved below slideshow -->
+            <div class="hero-badges" style="margin-top: 30px; justify-content: center;">
+                <span class="badge">Islamic Environment</span>
+                <span class="badge">Academic Excellence</span>
+                <span class="badge">Qualified Teachers</span>
+                <span class="badge">Modern Facilities</span>
             </div>
         </div>
     </section>
@@ -112,16 +368,16 @@
                     <div class="feature-icon">
                         <i class="fas fa-futbol"></i>
                     </div>
-                    <h3>Sports & Literary activities </h3>
+                    <h3>Sports & Literary Activities</h3>
                     <p>Well-rounded development through sports, clubs, and extracurricular activities.</p>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-computer"></i>
+                        <i class="fas fa-laptop-code"></i>
                     </div>
-                    <h3>Science and Vocational activities</h3>
-                    <p>Well-rounded development in science and technology.</p>
+                    <h3>Science & Vocational Activities</h3>
+                    <p>Well-rounded development in science, technology, and practical vocational skills.</p>
                 </div>
             </div>
         </div>
@@ -183,7 +439,7 @@
                     <h3>Contact Info</h3>
                     <div class="contact-info-footer">
                         <p><i class="fas fa-map-marker-alt"></i> Igbeba, Ijebu-Ode, Ogun State, Nigeria</p>
-                        <p><i class="fas fa-phone"></i> +234 081 234 5678</p>
+                        <p><i class="fas fa-phone"></i> +234 803 065 8893</p>
                         <p><i class="fas fa-envelope"></i> Miklaw01@gmail.com</p>
                         <p><i class="fas fa-clock"></i> Mon - Fri: 8:00 AM - 5:00 PM</p>
                     </div>
@@ -192,12 +448,102 @@
             
             <div class="footer-bottom">
                 <div class="copyright">
-                    &copy; <span id="currentYear"></span> Takbir Model School. All Rights Reserved.
+                    &copy; <span id="currentYear"></span> Takbir Group Of School. All Rights Reserved.
                 </div>
             </div>
         </div>
     </footer>
 
     <script src="assets/js/main.js"></script>
+    <script>
+        // Hero Slideshow Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.hero-slide');
+            const dots = document.querySelectorAll('.slide-dot');
+            const prevBtn = document.querySelector('.prev-slide');
+            const nextBtn = document.querySelector('.next-slide');
+            let currentSlide = 0;
+            let slideInterval;
+            
+            function showSlide(index) {
+                // Hide all slides
+                slides.forEach(slide => {
+                    slide.classList.remove('active');
+                });
+                
+                // Remove active class from all dots
+                dots.forEach(dot => {
+                    dot.classList.remove('active');
+                });
+                
+                // Show the current slide
+                slides[index].classList.add('active');
+                dots[index].classList.add('active');
+                currentSlide = index;
+            }
+            
+            function nextSlide() {
+                let nextIndex = (currentSlide + 1) % slides.length;
+                showSlide(nextIndex);
+            }
+            
+            function prevSlide() {
+                let prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(prevIndex);
+            }
+            
+            function startSlideshow() {
+                slideInterval = setInterval(nextSlide, 5000); // Change every 5 seconds
+            }
+            
+            function stopSlideshow() {
+                clearInterval(slideInterval);
+            }
+            
+            // Add click events to dots
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', function() {
+                    stopSlideshow();
+                    showSlide(index);
+                    startSlideshow();
+                });
+            });
+            
+            // Add click events to navigation buttons
+            nextBtn.addEventListener('click', function() {
+                stopSlideshow();
+                nextSlide();
+                startSlideshow();
+            });
+            
+            prevBtn.addEventListener('click', function() {
+                stopSlideshow();
+                prevSlide();
+                startSlideshow();
+            });
+            
+            // Pause slideshow on hover
+            const slideshowContainer = document.querySelector('.hero-slideshow');
+            slideshowContainer.addEventListener('mouseenter', stopSlideshow);
+            slideshowContainer.addEventListener('mouseleave', startSlideshow);
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowLeft') {
+                    prevSlide();
+                    stopSlideshow();
+                    startSlideshow();
+                } else if (e.key === 'ArrowRight') {
+                    nextSlide();
+                    stopSlideshow();
+                    startSlideshow();
+                }
+            });
+            
+            // Initialize
+            showSlide(0);
+            startSlideshow();
+        });
+    </script>
 </body>
 </html>
